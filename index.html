@@ -1,129 +1,536 @@
 <!DOCTYPE html>
-<html><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<title>Stitch Design</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
-      :root {
-        --primary-color: #1193d4;
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+  <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <title>FraudShield - Protect Yourself from Financial Fraud</title>
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <style type="text/tailwindcss">
+    :root {
+      --primary-color: #1193d4;
+      --secondary-color: #283339;
+      --accent-color: #3b4b54;
+      --background-color: #111618;
+      --text-primary: #ffffff;
+      --text-secondary: #9db0b9;
+      --caution-color: #f59e0b;
+      --safe-color: #10b981;
+      --fraud-color: #ef4444;
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-link.active {
+      color: var(--primary-color);
+    }
+    .nav-link.active::after {
+      width: 100%;
+    }
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .animate-slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.8s ease forwards;
+    }
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(20px);
       }
-    </style>
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-scale {
+      transform: scale(0.95);
+      opacity: 0;
+      animation: scale 0.8s ease forwards;
+    }
+    @keyframes scale {
+      from { 
+        transform: scale(0.95);
+        opacity: 0;
+      }
+      to { 
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    .animate-pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--background-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-content {
+      text-align: center;
+    }
+    .loader-logo {
+      animation: logoAnimation 2s ease-in-out;
+    }
+    @keyframes logoAnimation {
+      0% { transform: scale(0.5); opacity: 0; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
 </head>
-<body class="bg-[#111618] font-manrope text-white">
-<div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#283339] px-6 md:px-10 py-4">
-<div class="flex items-center gap-3">
-<svg class="size-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_535)">
-<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
-</g>
-<defs>
-<clipPath id="clip0_6_535">
-<rect fill="white" height="48" width="48"></rect>
-</clipPath>
-</defs>
-</svg>
-<h1 class="text-xl font-bold">FraudShield</h1>
-</div>
-<div class="hidden md:flex items-center gap-6">
-<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Dashboard</a>
-<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Reports</a>
-<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Settings</a>
-</div>
-<div class="flex items-center gap-4">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyQn3fYGd4G220UUXlBZobi7xQGnS9jWbr9nKL0mbNRF9SBUxYrysW-jBu8YsGlHuE3O7Qa263CkMXYtbfBd_oJovLRM-Fd9Xc4QaDMDE1F35QqPKDS1axLCFXp-3QzwVDl7UQ_vH9bjBk7d0E6N6ZwTURp9oBnxdewiLTXyDrCcDeuo0SMkVHuyTJRNVDOptr51xRfntqe98YjB2Qjsk3hWe8KIumF_z8Mshi-ghr75jOu42ucx0AtGQFF_DKf_yfYv_7wnjJ5YU");'></div>
-<button class="md:hidden">
-<span class="material-symbols-outlined"> menu </span>
-</button>
-</div>
-</header>
-<main class="flex-1 px-6 md:px-16 lg:px-40 py-10">
-<div class="layout-content-container mx-auto flex max-w-5xl flex-col gap-8">
-<h2 class="text-4xl font-bold tracking-tighter">
-              Dashboard
-            </h2>
-<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-2 rounded-lg p-6 border border-[#3b4b54] bg-[#1a2226]">
-<p class="text-base font-medium text-gray-300">
-                  Total scams flagged
-                </p>
-<p class="text-3xl font-bold text-white">1,234</p>
-</div>
-<div class="flex flex-col gap-2 rounded-lg p-6 border border-[#3b4b54] bg-[#1a2226]">
-<p class="text-base font-medium text-gray-300">
-                  Total safe checks completed
-                </p>
-<p class="text-3xl font-bold text-white">5,678</p>
-</div>
-<div class="flex flex-col gap-2 rounded-lg p-6 border border-[#3b4b54] bg-[#1a2226]">
-<p class="text-base font-medium text-gray-300">
-                  % of fraudulent cases detected
-                </p>
-<p class="text-3xl font-bold text-white">15%</p>
-</div>
-</section>
-<section class="flex flex-col sm:flex-row gap-4 py-6">
-<button class="flex flex-1 items-center justify-center gap-2 rounded-md h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold hover:bg-opacity-90 transition-colors">
-<span class="material-symbols-outlined"> image </span>
-<span>Submit Screenshot</span>
-</button>
-<button class="flex flex-1 items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#283339] text-white text-base font-bold hover:bg-opacity-80 transition-colors">
-<span class="material-symbols-outlined"> link </span>
-<span>Submit Link</span>
-</button>
-</section>
-<section>
-<h3 class="text-2xl font-bold tracking-tight pb-6">
-                Testimonials
-              </h3>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-4 rounded-lg bg-[#1a2226] border border-[#283339] p-6">
-<div class="flex items-center gap-4">
-<div class="size-12 bg-center bg-no-repeat bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARciBgLeV0i8BNvFTSu12aD5bmwODHoiY-bCvHf6wYEXAb5HWE-FZK0fO-nEfsNua0fMsCQWNNy6Ol5j1zlbuWN_vbnkY5kDYykBhxmqiQfebhweSciAYr-ke-RoETOXPuzTTNQ-7rzYJF8Bnj3MbbG_hvpNcY-EA2o2k39kwU5CBZUu1AtSDpV7ueiXHIfZwxm8bXslH42SxKXMk4j5PbZgUn6oNbpylzjNTu9zENe01RBZF3K6OgbyvQBoF_8UMSPvO8Fh-rcPE");'></div>
-<div>
-<p class="font-bold">Sarah J.</p>
-<p class="text-sm text-gray-400">Verified User</p>
-</div>
-</div>
-<p class="text-gray-300">
-                    "FraudShield helped me identify a fraudulent investment scheme before I lost any money. Highly recommend!"
-                  </p>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-[#1a2226] border border-[#283339] p-6">
-<div class="flex items-center gap-4">
-<div class="size-12 bg-center bg-no-repeat bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEqb92kSaNs5RliQf02d-WX8RFGxxg-7gw2-8eBCQEPZEEfLmAKqTDuycHAXHWAzPunRUUn3FZgNTpLMWrst2IC0bRirMm-BaVOOporP9AxCChLh2JxwvpebY5pL00CxoWqAeRb3tyMIyoRuBK2Wkhd-h1rQDmOLn3v_ngfWgPyehCFBWfngNI-vV4JcVAZxcfBvwt5_9k_a6EtSE9OC5d8IOqYK4jeE_3ocb03IbKfuxHWyrWy0lp2VwQXYl-IBelpm2lsqXetoQ");'></div>
-<div>
-<p class="font-bold">Michael T.</p>
-<p class="text-sm text-gray-400">Verified User</p>
-</div>
-</div>
-<p class="text-gray-300">
-                    "Thanks to FraudShield, I was able to verify the legitimacy of a financial advisor and avoid a potential scam."
-                  </p>
-</div>
-<div class="flex flex-col gap-4 rounded-lg bg-[#1a2226] border border-[#283339] p-6">
-<div class="flex items-center gap-4">
-<div class="size-12 bg-center bg-no-repeat bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmz5vdvvsrqkJhG8IHJyjzInLNinWPigOagInHNUQgx0bRmRP5DL20q_NhvfTPIld5O7lz_d81k61Czo_6-ugLgxnYY7RK9jMZ7bLpfLhV2e44Hp-APUzIrEHZ7S2TYdjjOxsYmt9EeGr54hAZ_copxiAYqH5WyLlGBg42s5PGUMmUihCMJzKqDY95fF-XIeNzO9-oq5Y1T-ymv8c0HWzhrGM9MfE3R4dnid8MsECWtaNdMIFLJ1ceaSCM8W0WbS-ZbaajzI3ZPCQ");'></div>
-<div>
-<p class="font-bold">Emily R.</p>
-<p class="text-sm text-gray-400">Verified User</p>
-</div>
-</div>
-<p class="text-gray-300">
-                    "FraudShield's quick analysis saved me from falling for a phishing attempt. It's an essential tool for online safety."
-                  </p>
-</div>
-</div>
-</section>
-</div>
-</main>
-</div>
-</div>
+<body class="bg-[var(--background-color)] text-[var(--text-primary)]" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+  <!-- Loader Animation -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <svg class="loader-logo h-24 w-24 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_6_535)">
+          <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_6_535">
+            <rect fill="white" height="48" width="48"></rect>
+          </clipPath>
+        </defs>
+      </svg>
+      <h1 class="mt-4 text-2xl font-bold">FraudShield</h1>
+      <p class="mt-2 text-[var(--text-secondary)]">Protecting you from financial fraud</p>
+    </div>
+  </div>
 
+  <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+    <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--secondary-color)] bg-[var(--background-color)]/80 px-6 md:px-10 py-4 backdrop-blur-sm">
+      <div class="flex items-center gap-3">
+        <svg class="size-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_6_535)">
+            <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_6_535">
+              <rect fill="white" height="48" width="48"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+        <h1 class="text-xl font-bold">FraudShield</h1>
+      </div>
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="nav-link text-sm font-medium active" href="index.html">Home</a>
+        <a class="nav-link text-sm font-medium" href="guidelines.html">Guidelines</a>
+        <a class="nav-link text-sm font-medium" href="report.html">Report</a>
+        <a class="nav-link text-sm font-medium" href="analysis.html">Analysis</a>
+        <a class="nav-link text-sm font-medium" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="forgot-password.html" class="flex h-10 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[var(--secondary-color)] px-4 text-sm font-bold leading-normal tracking-wide transition-colors hover:bg-[var(--accent-color)]">
+          <span class="truncate">Login</span>
+        </a>
+        <button id="mobileMenuButton" class="md:hidden">
+          <span class="material-symbols-outlined"> menu </span>
+        </button>
+      </div>
+    </header>
 
-</body></html>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 hidden bg-[var(--background-color)] pt-20 px-6">
+      <nav class="flex flex-col items-start gap-6">
+        <a class="nav-link text-lg font-medium active" href="index.html">Home</a>
+        <a class="nav-link text-lg font-medium" href="guidelines.html">Guidelines</a>
+        <a class="nav-link text-lg font-medium" href="report.html">Report</a>
+        <a class="nav-link text-lg font-medium" href="analysis.html">Analysis</a>
+        <a class="nav-link text-lg font-medium" href="#contact">Contact</a>
+        <a href="forgot-password.html" class="mt-4 flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[var(--secondary-color)] px-4 text-base font-bold leading-normal tracking-wide transition-colors hover:bg-[var(--accent-color)]">
+          <span class="truncate">Login</span>
+        </a>
+      </nav>
+    </div>
+
+    <main class="flex-1">
+      <!-- Hero Section -->
+      <section class="relative overflow-hidden py-20 md:py-32">
+        <div class="absolute inset-0 z-0 bg-gradient-to-b from-[var(--background-color)] via-[#162329] to-[var(--background-color)]"></div>
+        <div class="container mx-auto px-6 md:px-10 relative z-10">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="flex-1 animate-slide-up" style="animation-delay: 0.3s;">
+              <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+                <span class="text-[var(--primary-color)]">Protect</span> Yourself<br>
+                From Financial Fraud
+              </h2>
+              <p class="text-lg md:text-xl text-[var(--text-secondary)] mb-8 max-w-xl">
+                FraudShield helps you identify and avoid financial scams with our advanced AI-powered detection system.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="#dashboard" class="flex items-center justify-center gap-2 rounded-md h-12 px-8 bg-[var(--primary-color)] text-white text-base font-bold hover:bg-opacity-90 transition-colors">
+                  <span>Get Started</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+                <a href="guidelines.html" class="flex items-center justify-center gap-2 rounded-md h-12 px-8 bg-transparent border border-[var(--accent-color)] text-white text-base font-bold hover:bg-[var(--secondary-color)] transition-colors">
+                  <span>Learn More</span>
+                </a>
+              </div>
+            </div>
+            <div class="flex-1 animate-scale" style="animation-delay: 0.6s;">
+              <div class="relative">
+                <svg class="w-full h-auto max-w-lg mx-auto animate-pulse" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M250 50C152.5 50 75 127.5 75 225C75 322.5 152.5 400 250 400C347.5 400 425 322.5 425 225C425 127.5 347.5 50 250 50Z" fill="#1a2226" stroke="#283339" stroke-width="2"/>
+                  <path d="M250 100C180.5 100 125 155.5 125 225C125 294.5 180.5 350 250 350C319.5 350 375 294.5 375 225C375 155.5 319.5 100 250 100Z" fill="#1c2327" stroke="#3b4b54" stroke-width="2"/>
+                  <path d="M250 150C208.5 150 175 183.5 175 225C175 266.5 208.5 300 250 300C291.5 300 325 266.5 325 225C325 183.5 291.5 150 250 150Z" fill="#1e2429" stroke="#1193d4" stroke-width="2"/>
+                  <path d="M250 175C222.5 175 200 197.5 200 225C200 252.5 222.5 275 250 275C277.5 275 300 252.5 300 225C300 197.5 277.5 175 250 175Z" fill="#1193d4" stroke="#ffffff" stroke-width="2"/>
+                  <path d="M250 200C236.5 200 225 211.5 225 225C225 238.5 236.5 250 250 250C263.5 250 275 238.5 275 225C275 211.5 263.5 200 250 200Z" fill="#ffffff"/>
+                  <path d="M425 100L450 75M425 350L450 375M75 100L50 75M75 350L50 375" stroke="#1193d4" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M250 50V25M425 225H450M250 400V425M75 225H50" stroke="#1193d4" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M150 75L125 50M350 75L375 50M150 375L125 400M350 375L375 400" stroke="#1193d4" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M175 150L150 125M325 150L350 125M175 300L150 325M325 300L350 325" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M200 175L175 150M300 175L325 150M200 275L175 300M300 275L325 300" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M225 200L200 175M275 200L300 175M225 250L200 275M275 250L300 275" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+                  <g class="animate-pulse">
+                    <path d="M250 25C250 25 300 0 350 25M350 25C350 25 400 0 450 25" stroke="#1193d4" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M250 425C250 425 300 450 350 425M350 425C350 425 400 450 450 425" stroke="#1193d4" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M50 25C50 25 100 0 150 25M150 25C150 25 200 0 250 25" stroke="#1193d4" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M50 425C50 425 100 450 150 425M150 425C150 425 200 450 250 425" stroke="#1193d4" stroke-width="2" stroke-linecap="round"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Use Us Section -->
+      <section class="py-16 bg-[#1a2226]">
+        <div class="container mx-auto px-6 md:px-10">
+          <div class="text-center mb-16 animate-slide-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Use FraudShield?</h2>
+            <p class="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">Our platform offers comprehensive protection against financial fraud with cutting-edge technology and expert guidance.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-[#1c2327] p-8 rounded-lg border border-[var(--accent-color)] animate-scale" style="animation-delay: 0.2s;">
+              <div class="text-[var(--primary-color)] mb-4">
+                <span class="material-symbols-outlined text-4xl">shield</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Advanced AI Detection</h3>
+              <p class="text-[var(--text-secondary)]">Our AI algorithms analyze patterns and detect fraudulent schemes with high accuracy, keeping you one step ahead of scammers.</p>
+            </div>
+            <div class="bg-[#1c2327] p-8 rounded-lg border border-[var(--accent-color)] animate-scale" style="animation-delay: 0.4s;">
+              <div class="text-[var(--primary-color)] mb-4">
+                <span class="material-symbols-outlined text-4xl">school</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Educational Resources</h3>
+              <p class="text-[var(--text-secondary)]">Access comprehensive guidelines and educational materials to help you recognize and avoid common financial scams.</p>
+            </div>
+            <div class="bg-[#1c2327] p-8 rounded-lg border border-[var(--accent-color)] animate-scale" style="animation-delay: 0.6s;">
+              <div class="text-[var(--primary-color)] mb-4">
+                <span class="material-symbols-outlined text-4xl">speed</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Real-time Analysis</h3>
+              <p class="text-[var(--text-secondary)]">Get instant feedback on potential scams through our screenshot and URL analysis tools, helping you make informed decisions.</p>
+            </div>
+            <div class="bg-[#1c2327] p-8 rounded-lg border border-[var(--accent-color)] animate-scale" style="animation-delay: 0.8s;">
+              <div class="text-[var(--primary-color)] mb-4">
+                <span class="material-symbols-outlined text-4xl">verified_user</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Regulatory Compliance</h3>
+              <p class="text-[var(--text-secondary)]">Stay informed about the latest SEBI guidelines and regulatory requirements to ensure your investments are protected.</p>
+            </div>
+            <div class="bg-[#1c2327] p-8 rounded-lg border border-[var(--accent-color)] animate-scale" style="animation-delay: 1s;">
+              <div class="text-[var(--primary-color)] mb-4">
+                <span class="material-symbols-outlined text-4xl">support_agent</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Expert Support</h3>
+              <p class="text-[var(--text-secondary)]">Our team of financial security experts is available to provide guidance and support when you need it most.</p>
+            </div>
+            <div class="bg-[#1c2327] p-8 rounded-lg border border-[var(--accent-color)] animate-scale" style="animation-delay: 1.2s;">
+              <div class="text-[var(--primary-color)] mb-4">
+                <span class="material-symbols-outlined text-4xl">trending_up</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3">Continuous Updates</h3>
+              <p class="text-[var(--text-secondary)]">Our system is constantly updated to detect new fraud techniques and emerging scam patterns in the financial market.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How to Use Section -->
+      <section class="py-16">
+        <div class="container mx-auto px-6 md:px-10">
+          <div class="text-center mb-16 animate-slide-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">How to Use FraudShield</h2>
+            <p class="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">Follow these simple steps to protect yourself from financial fraud</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col items-center text-center animate-scale" style="animation-delay: 0.3s;">
+              <div class="w-16 h-16 rounded-full bg-[var(--primary-color)] flex items-center justify-center text-2xl font-bold mb-6">1</div>
+              <h3 class="text-xl font-bold mb-3">Submit for Analysis</h3>
+              <p class="text-[var(--text-secondary)]">Upload a screenshot or submit a URL of a suspicious financial offer, investment opportunity, or communication.</p>
+            </div>
+            <div class="flex flex-col items-center text-center animate-scale" style="animation-delay: 0.6s;">
+              <div class="w-16 h-16 rounded-full bg-[var(--primary-color)] flex items-center justify-center text-2xl font-bold mb-6">2</div>
+              <h3 class="text-xl font-bold mb-3">Review the Analysis</h3>
+              <p class="text-[var(--text-secondary)]">Our AI system will analyze the submission and provide a detailed risk assessment with specific warning signs and recommendations.</p>
+            </div>
+            <div class="flex flex-col items-center text-center animate-scale" style="animation-delay: 0.9s;">
+              <div class="w-16 h-16 rounded-full bg-[var(--primary-color)] flex items-center justify-center text-2xl font-bold mb-6">3</div>
+              <h3 class="text-xl font-bold mb-3">Take Informed Action</h3>
+              <p class="text-[var(--text-secondary)]">Based on our analysis, make informed decisions about the financial opportunity and report suspicious activities to regulatory authorities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-16">
+        <div class="container mx-auto px-6 md:px-10">
+          <div class="text-center mb-16 animate-slide-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+            <p class="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">Have questions or need assistance? Our team is here to help you.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="animate-scale" style="animation-delay: 0.3s;">
+              <form class="space-y-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium mb-2">Your Name</label>
+                  <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-md bg-[#1c2327] border border-[var(--accent-color)] focus:border-[var(--primary-color)] focus:outline-none transition-colors" placeholder="Enter your name">
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                  <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-md bg-[#1c2327] border border-[var(--accent-color)] focus:border-[var(--primary-color)] focus:outline-none transition-colors" placeholder="Enter your email">
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                  <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-md bg-[#1c2327] border border-[var(--accent-color)] focus:border-[var(--primary-color)] focus:outline-none transition-colors" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="w-full flex items-center justify-center gap-2 rounded-md h-12 px-8 bg-[var(--primary-color)] text-white text-base font-bold hover:bg-opacity-90 transition-colors">
+                  <span>Send Message</span>
+                  <span class="material-symbols-outlined">send</span>
+                </button>
+              </form>
+            </div>
+            <div class="animate-scale" style="animation-delay: 0.6s;">
+              <div class="bg-[#1c2327] p-8 rounded-lg border border-[var(--accent-color)] h-full">
+                <h3 class="text-xl font-bold mb-6">Get in Touch</h3>
+                <div class="space-y-6">
+                  <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-[var(--primary-color)]">location_on</span>
+                    <div>
+                      <p class="font-medium">Address</p>
+                      <p class="text-[var(--text-secondary)]">123 Financial District, Mumbai, India 400001</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-[var(--primary-color)]">email</span>
+                    <div>
+                      <p class="font-medium">Email</p>
+                      <p class="text-[var(--text-secondary)]">support@fraudshield.com</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-[var(--primary-color)]">call</span>
+                    <div>
+                      <p class="font-medium">Phone</p>
+                      <p class="text-[var(--text-secondary)]">+91 1234 567 890</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-[var(--primary-color)]">schedule</span>
+                    <div>
+                      <p class="font-medium">Working Hours</p>
+                      <p class="text-[var(--text-secondary)]">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="py-16 bg-[#1a2226]">
+        <div class="container mx-auto px-6 md:px-10">
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 animate-slide-up">Dashboard</h2>
+          <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-scale" style="animation-delay: 0.3s;">
+            <div class="flex flex-col gap-2 rounded-lg p-6 border border-[#3b4b54] bg-[#1c2327]">
+              <p class="text-base font-medium text-gray-300">Total scams flagged</p>
+              <p class="text-3xl font-bold text-white">1,234</p>
+            </div>
+            <div class="flex flex-col gap-2 rounded-lg p-6 border border-[#3b4b54] bg-[#1c2327]">
+              <p class="text-base font-medium text-gray-300">Total safe checks completed</p>
+              <p class="text-3xl font-bold text-white">5,678</p>
+            </div>
+            <div class="flex flex-col gap-2 rounded-lg p-6 border border-[#3b4b54] bg-[#1c2327]">
+              <p class="text-base font-medium text-gray-300">% of fraudulent cases detected</p>
+              <p class="text-3xl font-bold text-white">15%</p>
+            </div>
+          </section>
+          <section class="flex flex-col sm:flex-row gap-4 py-6 animate-scale" style="animation-delay: 0.6s;">
+            <a href="analysis.html" class="flex flex-1 items-center justify-center gap-2 rounded-md h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold hover:bg-opacity-90 transition-colors">
+              <span class="material-symbols-outlined">image</span>
+              <span>Submit Screenshot</span>
+            </a>
+            <a href="report.html" class="flex flex-1 items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#283339] text-white text-base font-bold hover:bg-opacity-80 transition-colors">
+              <span class="material-symbols-outlined">link</span>
+              <span>Submit Link</span>
+            </a>
+          </section>
+          <section class="animate-scale" style="animation-delay: 0.9s;">
+            <h3 class="text-2xl font-bold tracking-tight pb-6">Testimonials</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="flex flex-col gap-4 rounded-lg bg-[#1c2327] border border-[#283339] p-6">
+                <div class="flex items-center gap-4">
+                  <div class="size-12 bg-center bg-no-repeat bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARciBgLeV0i8BNvFTSu12aD5bmwODHoiY-bCvHf6wYEXAb5HWE-FZK0fO-nEfsNua0fMsCQWNNy6Ol5j1zlbuWN_vbnkY5kDYykBhxmqiQfebhweSciAYr-ke-RoETOXPuzTTNQ-7rzYJF8Bnj3MbbG_hvpNcY-EA2o2k39kwU5CBZUu1AtSDpV7ueiXHIfZwxm8bXslH42SxKXMk4j5PbZgUn6oNbpylzjNTu9zENe01RBZF3K6OgbyvQBoF_8UMSPvO8Fh-rcPE");'></div>
+                  <div>
+                    <p class="font-bold">Sarah J.</p>
+                    <p class="text-sm text-gray-400">Verified User</p>
+                  </div>
+                </div>
+                <p class="text-gray-300">"FraudShield helped me identify a fraudulent investment scheme before I lost any money. Highly recommend!"</p>
+              </div>
+              <div class="flex flex-col gap-4 rounded-lg bg-[#1c2327] border border-[#283339] p-6">
+                <div class="flex items-center gap-4">
+                  <div class="size-12 bg-center bg-no-repeat bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEqb92kSaNs5RliQf02d-WX8RFGxxg-7gw2-8eBCQEPZEEfLmAKqTDuycHAXHWAzPunRUUn3FZgNTpLMWrst2IC0bRirMm-BaVOOporP9AxCChLh2JxwvpebY5pL00CxoWqAeRb3tyMIyoRuBK2Wkhd-h1rQDmOLn3v_ngfWgPyehCFBWfngNI-vV4JcVAZxcfBvwt5_9k_a6EtSE9OC5d8IOqYK4jeE_3ocb03IbKfuxHWyrWy0lp2VwQXYl-IBelpm2lsqXetoQ");'></div>
+                  <div>
+                    <p class="font-bold">Michael T.</p>
+                    <p class="text-sm text-gray-400">Verified User</p>
+                  </div>
+                </div>
+                <p class="text-gray-300">"The real-time analysis feature saved me from falling victim to a sophisticated phishing attempt targeting my investment portfolio."</p>
+              </div>
+              <div class="flex flex-col gap-4 rounded-lg bg-[#1c2327] border border-[#283339] p-6">
+                <div class="flex items-center gap-4">
+                  <div class="size-12 bg-center bg-no-repeat bg-cover rounded-full" style='background-image: url("https://randomuser.me/api/portraits/women/42.jpg");'></div>
+                  <div>
+                    <p class="font-bold">Priya R.</p>
+                    <p class="text-sm text-gray-400">Verified User</p>
+                  </div>
+                </div>
+                <p class="text-gray-300">"As a first-time investor, FraudShield's educational resources helped me understand the warning signs of financial fraud and make safer investment decisions."</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#1a2226] border-t border-[var(--accent-color)] py-12">
+      <div class="container mx-auto px-6 md:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <svg class="size-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_535)">
+                  <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_535">
+                    <rect fill="white" height="48" width="48"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <h3 class="text-xl font-bold">FraudShield</h3>
+            </div>
+            <p class="text-[var(--text-secondary)] mb-6">Protecting you from financial fraud with advanced AI technology and expert guidance.</p>
+            <div class="flex gap-4">
+              <a href="#" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">
+                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+            <ul class="space-y-4">
+              <li><a href="index.html" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">Home</a></li>
+              <li><a href="guidelines.html" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">Guidelines</a></li>
+              <li><a href="report.html" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">Report</a></li>
+              <li><a href="analysis.html" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">Analysis</a></li>
+              <li><a href="#contact" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold mb-6">Resources</h4>
+            <ul class="space-y-4">
+              <li><a href="#" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">Blog</a></li>
+              <li><a href="#" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">FAQ</a></li>
+              <li><a href="#" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">Privacy Policy</a></li>
+              <li><a href="#" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">Terms of Service</a></li>
+              <li><a href="#" class="text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors">SEBI Guidelines</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+            <p class="text-[var(--text-secondary)] mb-4">Subscribe to our newsletter for the latest updates on financial fraud protection.</p>
+            <form class="flex">
+              <input type="email" placeholder="Your email address" class="flex-1 px-4 py-2 rounded-l-md bg-[#1c2327] border border-[var(--accent-color)] focus:border-[var(--primary-color)] focus:outline-none transition-colors">
+              <button type="submit" class="bg-[var(--primary-color)] text-white px-4 py-2 rounded-r-md hover:bg-opacity-90 transition-colors">
+                <span class="material-symbols-outlined">send</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="border-t border-[var(--accent-color)] pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-[var(--text-secondary)] text-sm mb-4 md:mb-0">© 2023 FraudShield. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="#" class="text-[var(--text-secondary)] text-sm hover:text-[var(--primary-color)] transition-colors">Privacy Policy</a>
+            <a href="#" class="text-[var(--text-secondary)] text-sm hover:text-[var(--primary-color)] transition-colors">Terms of Service</a>
+            <a href="#" class="text-[var(--text-secondary)] text-sm hover:text-[var(--primary-color)] transition-colors">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="mobile-menu.js"></script>
+</body>
+</html>
+
