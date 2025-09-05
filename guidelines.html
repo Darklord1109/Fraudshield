@@ -1,0 +1,140 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #1193d4;
+      }
+    </style>
+</head>
+<body class="bg-[#111618] text-white" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--secondary-color)] bg-[var(--background-color)]/80 px-6 md:px-10 py-4 backdrop-blur-sm">
+<div class="flex items-center gap-3">
+<svg class="size-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+<h1 class="text-xl font-bold">FraudShield</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link text-sm font-medium" href="index.html">Home</a>
+<a class="nav-link text-sm font-medium active" href="guidelines.html">Guidelines</a>
+<a class="nav-link text-sm font-medium" href="report.html">Report</a>
+<a class="nav-link text-sm font-medium" href="analysis.html">Analysis</a>
+<a class="nav-link text-sm font-medium" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-2">
+<a href="forgot-password.html" class="flex h-10 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[var(--secondary-color)] px-4 text-sm font-bold leading-normal tracking-wide transition-colors hover:bg-[var(--accent-color)]">
+<span class="truncate">Login</span>
+</a>
+<button id="mobileMenuButton" class="md:hidden">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 hidden bg-[var(--background-color)] pt-20 px-6">
+    <nav class="flex flex-col items-start gap-6">
+      <a class="nav-link text-lg font-medium" href="index.html">Home</a>
+      <a class="nav-link text-lg font-medium active" href="guidelines.html">Guidelines</a>
+      <a class="nav-link text-lg font-medium" href="report.html">Report</a>
+      <a class="nav-link text-lg font-medium" href="analysis.html">Analysis</a>
+      <a class="nav-link text-lg font-medium" href="#contact">Contact</a>
+      <a href="forgot-password.html" class="mt-4 flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[var(--secondary-color)] px-4 text-base font-bold leading-normal tracking-wide transition-colors hover:bg-[var(--accent-color)]">
+        <span class="truncate">Login</span>
+      </a>
+    </nav>
+  </div>
+
+  <main class="flex flex-1 justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="layout-content-container flex w-full max-w-5xl flex-col gap-12">
+<div class="text-center">
+<h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">SEBI Regulatory Guidelines</h1>
+<p class="mt-4 text-lg text-gray-400">Your guide to safe and informed investing.</p>
+</div>
+<section class="rounded-md bg-[#1a2125] p-8">
+<h2 class="text-2xl font-bold leading-tight tracking-tight text-white">Investor Do's &amp; Don'ts</h2>
+<p class="mt-4 text-gray-300">
+                Always verify the credentials of any financial advisor or firm through official channels. Never invest based solely on unsolicited advice or promises of guaranteed
+                returns. Be wary of schemes that seem too good to be true, and always read the fine print before investing.
+              </p>
+</section>
+<section>
+<h2 class="text-3xl font-bold leading-tight tracking-tight text-center">How to Identify Common Scams</h2>
+<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
+<div class="flex flex-col gap-4 rounded-md bg-[#1a2125] p-6">
+<h3 class="text-xl font-bold text-[var(--primary-color)]">Ponzi Schemes</h3>
+<p class="text-gray-300">
+                    Luring investors with high returns, these schemes pay earlier investors with new investor funds, creating a facade of profit until it collapses. Watch for
+                    guaranteed high returns and lack of transparency.
+                  </p>
+</div>
+<div class="flex flex-col gap-4 rounded-md bg-[#1a2125] p-6">
+<h3 class="text-xl font-bold text-[var(--primary-color)]">Pump &amp; Dump</h3>
+<p class="text-gray-300">
+                    Fraudsters artificially inflate a stock's price with misleading statements, then sell their shares once the price peaks, causing losses for other investors. Beware
+                    of sudden, hyped-up price increases.
+                  </p>
+</div>
+<div class="flex flex-col gap-4 rounded-md bg-[#1a2125] p-6">
+<h3 class="text-xl font-bold text-[var(--primary-color)]">Fake IPOs</h3>
+<p class="text-gray-300">
+                    Scammers pose as legitimate companies offering pre-IPO shares that don't exist. Always verify an IPO's authenticity through official regulatory filings and be wary
+                    of unsolicited offers.
+                  </p>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-3xl font-bold leading-tight tracking-tight text-center">Links to Regulator Websites</h2>
+<div class="mt-8 flex flex-col gap-4">
+<a class="group flex items-center justify-between rounded-md bg-[#1a2125] p-4 transition-all hover:bg-[var(--primary-color)] hover:text-white" href="#">
+<span class="text-base font-medium">Securities and Exchange Board of India (SEBI)</span>
+<span class="material-symbols-outlined transform transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="group flex items-center justify-between rounded-md bg-[#1a2125] p-4 transition-all hover:bg-[var(--primary-color)] hover:text-white" href="#">
+<span class="text-base font-medium">Reserve Bank of India (RBI)</span>
+<span class="material-symbols-outlined transform transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</section>
+<section class="rounded-md border border-[var(--primary-color)] bg-gradient-to-r from-[#1a2125] to-transparent p-8 text-center">
+<h2 class="text-3xl font-bold leading-tight tracking-tight">Report Fraud</h2>
+<p class="mt-4 text-gray-300">If you suspect you've been a victim of financial fraud, report it immediately to the appropriate authorities.</p>
+<div class="mt-6 flex justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-8 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-[0.015em] transition-all hover:brightness-110">
+<span class="truncate">File a Complaint with SEBI</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<footer class="border-t border-solid border-t-[#283339]">
+<div class="mx-auto max-w-5xl px-5 py-8">
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-center">
+<a class="text-[#9db0b9] hover:text-white text-sm font-normal leading-normal transition-colors" href="#">Terms of Service</a>
+<a class="text-[#9db0b9] hover:text-white text-sm font-normal leading-normal transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#9db0b9] hover:text-white text-sm font-normal leading-normal transition-colors" href="#">Contact Us</a>
+</div>
+<p class="mt-6 text-center text-sm text-[#9db0b9]">© 2024 FraudWatch. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+
+  <script src="mobile-menu.js"></script>
+</body></html>

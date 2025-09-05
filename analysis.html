@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>FraudGuard - Screenshot Analysis</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #1193d4;
+        --secondary-color: #283339;
+        --accent-color: #3b4b54;
+        --background-color: #111618;
+        --text-primary: #ffffff;
+        --text-secondary: #9db0b9;
+        --caution-color: #f59e0b;--safe-color: #10b981;--fraud-color: #ef4444;}
+      .risk-caution { background-color: var(--caution-color); }
+      .risk-safe { background-color: var(--safe-color); }
+      .risk-fraud { background-color: var(--fraud-color); }
+      .nav-link:hover {
+        color: var(--primary-color);
+        transition: color 0.3s ease;
+      }
+    </style>
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary)]" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--secondary-color)] bg-[var(--background-color)]/80 px-6 md:px-10 py-4 backdrop-blur-sm">
+<div class="flex items-center gap-3">
+<svg class="size-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+<h1 class="text-xl font-bold">FraudShield</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link text-sm font-medium" href="index.html">Home</a>
+<a class="nav-link text-sm font-medium" href="guidelines.html">Guidelines</a>
+<a class="nav-link text-sm font-medium" href="report.html">Report</a>
+<a class="nav-link text-sm font-medium active" href="analysis.html">Analysis</a>
+<a class="nav-link text-sm font-medium" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-2">
+<a href="forgot-password.html" class="flex h-10 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[var(--secondary-color)] px-4 text-sm font-bold leading-normal tracking-wide transition-colors hover:bg-[var(--accent-color)]">
+<span class="truncate">Login</span>
+</a>
+<button id="mobileMenuButton" class="md:hidden">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 hidden bg-[var(--background-color)] pt-20 px-6">
+    <nav class="flex flex-col items-start gap-6">
+      <a class="nav-link text-lg font-medium" href="index.html">Home</a>
+      <a class="nav-link text-lg font-medium" href="guidelines.html">Guidelines</a>
+      <a class="nav-link text-lg font-medium" href="report.html">Report</a>
+      <a class="nav-link text-lg font-medium active" href="analysis.html">Analysis</a>
+      <a class="nav-link text-lg font-medium" href="#contact">Contact</a>
+      <a href="forgot-password.html" class="mt-4 flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[var(--secondary-color)] px-4 text-base font-bold leading-normal tracking-wide transition-colors hover:bg-[var(--accent-color)]">
+        <span class="truncate">Login</span>
+      </a>
+    </nav>
+  </div>
+
+  <main class="flex flex-1 justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-4xl space-y-12">
+<section id="upload-section">
+<div class="text-center">
+<h2 class="text-4xl font-extrabold tracking-tighter sm:text-5xl">Screenshot Fraud Analysis</h2>
+<p class="mx-auto mt-4 max-w-2xl text-lg text-[var(--text-secondary)]">
+                Upload a screenshot of any suspected fraudulent message or website. Our AI-powered system will analyze it for you and provide a detailed risk report.
+              </p>
+</div>
+<div class="mt-10">
+<div class="relative flex w-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-[var(--accent-color)] bg-[var(--secondary-color)]/20 px-6 py-16 transition-colors hover:border-[var(--primary-color)]">
+<span class="material-symbols-outlined text-6xl text-[var(--primary-color)]">cloud_upload</span>
+<p class="mt-4 text-lg font-bold">Drag and drop your file here</p>
+<p class="mt-1 text-sm text-[var(--text-secondary)]">Supported formats: PNG, JPG</p>
+<input class="absolute inset-0 h-full w-full cursor-pointer opacity-0" type="file"/>
+<button class="mt-6 flex h-11 min-w-[120px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-md bg-[var(--primary-color)] px-6 text-sm font-bold leading-normal text-white transition-opacity hover:opacity-90">
+<span class="material-symbols-outlined">file_upload</span>
+<span class="truncate">Browse Files</span>
+</button>
+</div>
+</div>
+</section>
+<section id="report-section">
+<div class="space-y-4">
+<h3 class="text-3xl font-bold tracking-tight">Analysis Report</h3>
+<p class="text-[var(--text-secondary)]">
+                This is a sample report. Your analysis will appear here after uploading a file.
+              </p>
+</div>
+<div class="mt-8 rounded-lg bg-[var(--secondary-color)] shadow-lg">
+<div class="flex flex-col items-start gap-4 rounded-t-lg p-6 sm:flex-row sm:items-center sm:justify-between risk-caution">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl">warning</span>
+<div>
+<h4 class="text-2xl font-bold">Risk Rating: Caution</h4>
+<p class="text-base font-medium text-white/90">Moderate risk detected. Please review the details below carefully.</p>
+</div>
+</div>
+<button class="flex h-10 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-md bg-white/20 px-4 text-sm font-bold leading-normal text-white backdrop-blur-sm transition-colors hover:bg-white/30">
+<span class="material-symbols-outlined">flag</span>
+<span class="truncate">Report Scam</span>
+</button>
+</div>
+<div class="grid grid-cols-1 divide-y divide-[var(--accent-color)] md:grid-cols-3 md:divide-x md:divide-y-0">
+<div class="p-6">
+<p class="text-sm font-semibold text-[var(--text-secondary)]">Scam Type</p>
+<p class="mt-1 text-lg font-bold text-[var(--text-primary)]">Phishing Attempt</p>
+</div>
+<div class="p-6">
+<p class="text-sm font-semibold text-[var(--text-secondary)]">Confidence Score</p>
+<p class="mt-1 text-lg font-bold text-[var(--text-primary)]">85%</p>
+</div>
+<div class="p-6">
+<p class="text-sm font-semibold text-[var(--text-secondary)]">Advisor Verification</p>
+<p class="mt-1 text-lg font-bold text-[var(--text-primary)]">Not Verified</p>
+</div>
+</div>
+<div class="border-t border-[var(--accent-color)] p-6">
+<p class="text-sm font-semibold text-[var(--text-secondary)]">Reason for Decision</p>
+<p class="mt-1 text-[var(--text-primary)]">The message contains a suspicious link and creates a false sense of urgency, which are common tactics in phishing scams.</p>
+</div>
+<div class="border-t border-[var(--accent-color)] p-6">
+<p class="text-sm font-semibold text-[var(--text-secondary)]">Extracted Text</p>
+<p class="mt-1 font-mono text-sm text-[var(--text-primary)]/80">"Your account has been temporarily suspended. Click here to verify your details immediately: [suspicious-link.com]"</p>
+</div>
+<div class="border-t border-[var(--accent-color)] p-6 text-xs text-[var(--text-secondary)]">
+                Timestamp of Check: 2024-05-21 14:32:15 UTC
+              </div>
+</div>
+</section>
+<section id="educational-content">
+<div class="rounded-lg border border-[var(--accent-color)] bg-[var(--secondary-color)]/20 p-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-[var(--primary-color)]">school</span>
+<h3 class="text-2xl font-bold tracking-tight">Stay Safe with SEBI Guidelines</h3>
+</div>
+<p class="mt-4 text-[var(--text-secondary)]">
+                Financial scams are on the rise. Educate yourself on the latest SEBI guidelines to identify and avoid fraudulent schemes. Knowledge is your best defense against fraud.
+              </p>
+<button class="mt-6 flex h-10 min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-md border border-[var(--primary-color)] px-4 text-sm font-bold leading-normal text-[var(--primary-color)] transition-colors hover:bg-[var(--primary-color)] hover:text-white">
+<span class="truncate">Learn More</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<footer class="border-t border-[var(--secondary-color)] bg-[var(--background-color)]">
+<div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+<div class="flex justify-center space-x-6 md:order-2">
+<a class="text-[var(--text-secondary)] hover:text-[var(--text-primary)]" href="#">Terms of Service</a>
+<a class="text-[var(--text-secondary)] hover:text-[var(--text-primary)]" href="#">Privacy Policy</a>
+<a class="text-[var(--text-secondary)] hover:text-[var(--text-primary)]" href="#">Contact Us</a>
+</div>
+<div class="mt-8 md:order-1 md:mt-0">
+<p class="text-center text-xs leading-5 text-[var(--text-secondary)]">© 2024 FraudGuard. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+  <script src="mobile-menu.js"></script>
+</body></html>

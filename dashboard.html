@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #1193d4;
+      }
+    </style>
+</head>
+<body class="bg-[#111618] font-manrope text-white">
+<div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#283339] px-6 md:px-10 py-4">
+<div class="flex items-center gap-3">
+<svg class="size-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535">
+<rect fill="white" height="48" width="48"></rect>
+</clipPath>
+</defs>
+</svg>
+<h1 class="text-xl font-bold">FraudShield</h1>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Reports</a>
+<a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#">Settings</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyQn3fYGd4G220UUXlBZobi7xQGnS9jWbr9nKL0mbNRF9SBUxYrysW-jBu8YsGlHuE3O7Qa263CkMXYtbfBd_oJovLRM-Fd9Xc4QaDMDE1F35QqPKDS1axLCFXp-3QzwVDl7UQ_vH9bjBk7d0E6N6ZwTURp9oBnxdewiLTXyDrCcDeuo0SMkVHuyTJRNVDOptr51xRfntqe98YjB2Qjsk3hWe8KIumF_z8Mshi-ghr75jOu42ucx0AtGQFF_DKf_yfYv_7wnjJ5YU");'></div>
+<button class="md:hidden">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-6 md:px-16 lg:px-40 py-10">
+<div class="layout-content-container mx-auto flex max-w-5xl flex-col gap-8">
+<h2 class="text-4xl font-bold tracking-tighter">
+              Dashboard
+            </h2>
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex flex-col gap-2 rounded-lg p-6 border border-[#3b4b54] bg-[#1a2226]">
+<p class="text-base font-medium text-gray-300">
+                  Total scams flagged
+                </p>
+<p class="text-3xl font-bold text-white">1,234</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 border border-[#3b4b54] bg-[#1a2226]">
+<p class="text-base font-medium text-gray-300">
+                  Total safe checks completed
+                </p>
+<p class="text-3xl font-bold text-white">5,678</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 border border-[#3b4b54] bg-[#1a2226]">
+<p class="text-base font-medium text-gray-300">
+                  % of fraudulent cases detected
+                </p>
+<p class="text-3xl font-bold text-white">15%</p>
+</div>
+</section>
+<section class="flex flex-col sm:flex-row gap-4 py-6">
+<button class="flex flex-1 items-center justify-center gap-2 rounded-md h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold hover:bg-opacity-90 transition-colors">
+<span class="material-symbols-outlined"> image </span>
+<span>Submit Screenshot</span>
+</button>
+<button class="flex flex-1 items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#283339] text-white text-base font-bold hover:bg-opacity-80 transition-colors">
+<span class="material-symbols-outlined"> link </span>
+<span>Submit Link</span>
+</button>
+</section>
+<section>
+<h3 class="text-2xl font-bold tracking-tight pb-6">
+                Testimonials
+              </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex flex-col gap-4 rounded-lg bg-[#1a2226] border border-[#283339] p-6">
+<div class="flex items-center gap-4">
+<div class="size-12 bg-center bg-no-repeat bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARciBgLeV0i8BNvFTSu12aD5bmwODHoiY-bCvHf6wYEXAb5HWE-FZK0fO-nEfsNua0fMsCQWNNy6Ol5j1zlbuWN_vbnkY5kDYykBhxmqiQfebhweSciAYr-ke-RoETOXPuzTTNQ-7rzYJF8Bnj3MbbG_hvpNcY-EA2o2k39kwU5CBZUu1AtSDpV7ueiXHIfZwxm8bXslH42SxKXMk4j5PbZgUn6oNbpylzjNTu9zENe01RBZF3K6OgbyvQBoF_8UMSPvO8Fh-rcPE");'></div>
+<div>
+<p class="font-bold">Sarah J.</p>
+<p class="text-sm text-gray-400">Verified User</p>
+</div>
+</div>
+<p class="text-gray-300">
+                    "FraudShield helped me identify a fraudulent investment scheme before I lost any money. Highly recommend!"
+                  </p>
+</div>
+<div class="flex flex-col gap-4 rounded-lg bg-[#1a2226] border border-[#283339] p-6">
+<div class="flex items-center gap-4">
+<div class="size-12 bg-center bg-no-repeat bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEqb92kSaNs5RliQf02d-WX8RFGxxg-7gw2-8eBCQEPZEEfLmAKqTDuycHAXHWAzPunRUUn3FZgNTpLMWrst2IC0bRirMm-BaVOOporP9AxCChLh2JxwvpebY5pL00CxoWqAeRb3tyMIyoRuBK2Wkhd-h1rQDmOLn3v_ngfWgPyehCFBWfngNI-vV4JcVAZxcfBvwt5_9k_a6EtSE9OC5d8IOqYK4jeE_3ocb03IbKfuxHWyrWy0lp2VwQXYl-IBelpm2lsqXetoQ");'></div>
+<div>
+<p class="font-bold">Michael T.</p>
+<p class="text-sm text-gray-400">Verified User</p>
+</div>
+</div>
+<p class="text-gray-300">
+                    "Thanks to FraudShield, I was able to verify the legitimacy of a financial advisor and avoid a potential scam."
+                  </p>
+</div>
+<div class="flex flex-col gap-4 rounded-lg bg-[#1a2226] border border-[#283339] p-6">
+<div class="flex items-center gap-4">
+<div class="size-12 bg-center bg-no-repeat bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmz5vdvvsrqkJhG8IHJyjzInLNinWPigOagInHNUQgx0bRmRP5DL20q_NhvfTPIld5O7lz_d81k61Czo_6-ugLgxnYY7RK9jMZ7bLpfLhV2e44Hp-APUzIrEHZ7S2TYdjjOxsYmt9EeGr54hAZ_copxiAYqH5WyLlGBg42s5PGUMmUihCMJzKqDY95fF-XIeNzO9-oq5Y1T-ymv8c0HWzhrGM9MfE3R4dnid8MsECWtaNdMIFLJ1ceaSCM8W0WbS-ZbaajzI3ZPCQ");'></div>
+<div>
+<p class="font-bold">Emily R.</p>
+<p class="text-sm text-gray-400">Verified User</p>
+</div>
+</div>
+<p class="text-gray-300">
+                    "FraudShield's quick analysis saved me from falling for a phishing attempt. It's an essential tool for online safety."
+                  </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
